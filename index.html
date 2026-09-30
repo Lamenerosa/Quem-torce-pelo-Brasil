@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quem torce pelo Brasil</title>
+  <meta name="description" content="Candidatos(as) federais que se comprometem a manter a proibição das bets e dos jogos de azar virtuais no Brasil (MP nº 1.394/2026).">
+  <meta property="og:title" content="Quem torce pelo Brasil">
+  <meta property="og:url" content="https://quemtorcepelobrasil.com.br/">
+  <meta property="og:description" content="Veja quem se comprometeu a manter a proibição das bets no Brasil.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="icone.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="container">
+    <div class="placa topo-grade">
+      <h1 class="logo">
+        <span class="logo-quem">Quem</span>
+        <span class="logo-torce">Torce</span>
+        <span class="logo-pelo"><i></i>pelo<i></i></span>
+        <span class="logo-brasil">Brasil</span>
+      </h1>
+      <div class="topo-texto">
+      <p class="selo">Eleições 2026 · Congresso Nacional</p>
+      <p class="lead">
+        A <strong>Medida Provisória nº 1.394, de 25 de setembro de 2026</strong>, proibiu as bets e os jogos de azar
+        virtuais no país. Aqui você confere quais <strong>candidatos(as) federais</strong> se comprometeram publicamente a manter essa proibição.
+      </p>
+      <div class="numeros" aria-live="polite">
+        <div><span id="total-geral">0</span><small>compromissos registrados</small></div>
+        <div><span id="total-dep">0</span><small>deputados(as) federais</small></div>
+        <div><span id="total-sen">0</span><small>senadores(as)</small></div>
+      </div>
+      <p class="contagem" id="contagem"></p>
+      </div>
+    </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="compromisso" id="compromisso">
+      <h2>O compromisso</h2>
+      <blockquote>
+        “Eu me comprometo a votar pela manutenção da proibição das apostas de quota fixa (bets) e dos jogos de azar
+        virtuais no Brasil, nos termos da Medida Provisória nº 1.394/2026, e a me opor a qualquer proposta que busque
+        revogar ou flexibilizar essa proibição.”
+      </blockquote>
+      <p class="nota">Cada nome da lista tem um link para a fonte do compromisso: termo assinado, publicação oficial ou declaração pública.</p>
+    </section>
+
+    <section class="candidato" id="participe">
+      <h2>Você é candidato(a) e quer se comprometer?</h2>
+      <p>
+        Preencha a ficha de compromisso com os dados da sua candidatura. Depois de confirmarmos as informações,
+        o seu nome passa a aparecer na lista do seu estado.
+      </p>
+      <a class="botao" id="link-participe" href="#" target="_blank" rel="noopener">Quero assinar o compromisso</a>
+    </section>
+
+    <section id="lista" aria-labelledby="titulo-lista">
+      <h2 id="titulo-lista">Quem já se comprometeu</h2>
+      <p class="nota">Escolha o seu estado para ver os candidatos(as) comprometidos(as).</p>
+
+      <nav class="estados" id="estados" aria-label="Estados"></nav>
+
+      <form class="filtros" role="search" onsubmit="return false">
+        <label>
+          <span>Buscar</span>
+          <input type="search" id="busca" placeholder="Nome, partido ou número">
+        </label>
+        <label>
+          <span>Estado</span>
+          <select id="filtro-uf"><option value="">Todos</option></select>
+        </label>
+        <label>
+          <span>Cargo</span>
+          <select id="filtro-cargo">
+            <option value="">Todos</option>
+            <option value="Deputado(a) Federal">Deputado(a) Federal</option>
+            <option value="Senador(a)">Senador(a)</option>
+          </select>
+        </label>
+      </form>
+
+      <p class="resultado" id="resultado"></p>
+      <div id="grupos"></div>
+      <p class="vazio" id="vazio" hidden></p>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <p>Iniciativa da sociedade civil, sem vínculo com partidos ou candidaturas.</p>
+      <p class="contatos">
+        <a href="https://www.instagram.com/quemtorceparaobrasil" target="_blank" rel="noopener" aria-label="Instagram @quemtorceparaobrasil">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          @quemtorceparaobrasil
+        </a>
+        <a href="mailto:quemtorceparaobrasil@gmail.com" aria-label="E-mail quemtorceparaobrasil@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 7l10 7 10-7"/></svg>
+          quemtorceparaobrasil@gmail.com
+        </a>
+      </p>
+      <p>Última atualização da lista: <span id="atualizado">—</span></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
